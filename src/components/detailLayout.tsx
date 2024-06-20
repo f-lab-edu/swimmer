@@ -37,7 +37,7 @@ export default function Layout({children, id}: {children: React.ReactNode; id: s
 
     return (
       <>
-          <Header children={children}/>
+          <Header>{children}</Header>
           <Data onDataReceived={handleDataReceived} />
           <section className="text-gray-600 body-font overflow-hidden min-h-max">
           {data.map((item, index) => (
@@ -78,7 +78,7 @@ export default function Layout({children, id}: {children: React.ReactNode; id: s
               </div>
           ))}
           </section>
-          <Footer children={children}></Footer>
+          <Footer>{children}</Footer>
       </>
     )
 }
