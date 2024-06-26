@@ -1,4 +1,4 @@
-export default function Header({children}: {children: React.ReactNode;}) {
+export default function Header() {
     return (
         <>
             <header className="text-gray-600 body-font">
