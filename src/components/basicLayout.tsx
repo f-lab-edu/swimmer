@@ -8,7 +8,7 @@ import { PublicSwimmingPool } from '../lib/types';
 import { LinksButton, SaveVisitButton } from './button';
 import { Pagination } from "@nextui-org/pagination";
 
-export default function Layout({children}: {children: React.ReactNode;}) {
+export default function Layout() {
     const [data, setData] = useState<PublicSwimmingPool[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchResults, setSearchResults] = useState<PublicSwimmingPool[]>([]);
@@ -49,7 +49,7 @@ export default function Layout({children}: {children: React.ReactNode;}) {
 
     return (
         <>  
-            <Header></Header>
+            <Header />
             <Data onDataReceived={handleDataReceived} />
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 py-24 mx-auto max-w-screen-xl">
@@ -76,7 +76,7 @@ export default function Layout({children}: {children: React.ReactNode;}) {
                 </div>
                 </div>
             </section>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }
