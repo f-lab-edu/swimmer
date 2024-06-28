@@ -6,7 +6,7 @@ import { PublicSwimmingPool } from '../lib/types';
 import { addDataToFirestore } from '../data/firestore';
 import { useRouter } from 'next/navigation';
 
-export default function Layout({children, id}: {children: React.ReactNode; id: string | undefined;}) {
+export default function Layout({id}: {readonly id: string | undefined;}) {
   const [data, setData] = useState<PublicSwimmingPool[]>([]);
   const [textareaData, setTextareaData] = useState<string>('');
   const router = useRouter();
@@ -39,7 +39,7 @@ export default function Layout({children, id}: {children: React.ReactNode; id: s
 
   return (
     <>
-      <Header children={children}/>
+      <Header />
       <Data onDataReceived={handleDataReceived} />
       <section className="text-gray-600 body-font relative">
         {data.map((item, index) => (
@@ -59,7 +59,7 @@ export default function Layout({children, id}: {children: React.ReactNode; id: s
           </div>
         ))}
       </section>
-      <Footer children={children}></Footer>
+      <Footer />
     </>
   )
 }
