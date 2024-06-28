@@ -6,7 +6,7 @@ import { PublicSwimmingPool } from '../lib/types';
 import { addDataToFirestore } from '../data/firestore';
 import { useRouter } from 'next/navigation';
 
-export default function Layout({id}: {id: string | undefined;}) {
+export default function Layout({id}: {readonly id: string | undefined;}) {
   const [data, setData] = useState<PublicSwimmingPool[]>([]);
   const [textareaData, setTextareaData] = useState<string>('');
   const router = useRouter();

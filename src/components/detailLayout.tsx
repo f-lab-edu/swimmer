@@ -16,7 +16,7 @@ interface ReviewData {
   reg_date: string;
 }
 
-export default function Layout({id}: {id: string}) {
+export default function Layout({id}: {readonly id: string}) {
     const [data, setData] = useState<PublicSwimmingPool[]>([]);
     const [reviews, setReviews] = useState<ReviewData[]>([]);
 
